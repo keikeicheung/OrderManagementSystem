@@ -1,8 +1,5 @@
 package orderbook;
 
-import orderbook.Order;
-import orderbook.OrderBook;
-import orderbook.Side;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;

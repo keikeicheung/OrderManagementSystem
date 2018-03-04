@@ -1,7 +1,6 @@
-package cucumber.util;
+package integration.util;
 
 import orderbook.Order;
-import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;

@@ -1,4 +1,4 @@
-package cucumber.util;
+package integration.util;
 
 import cucumber.api.DataTable;
 import gherkin.formatter.model.DataTableRow;

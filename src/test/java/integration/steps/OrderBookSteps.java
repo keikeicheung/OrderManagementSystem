@@ -1,8 +1,6 @@
-package cucumber.steps;
+package integration.steps;
 
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -10,15 +8,13 @@ import gherkin.formatter.model.DataTableRow;
 import orderbook.Order;
 import orderbook.OrderBook;
 import orderbook.Side;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
 
 import java.util.*;
 
-import static cucumber.util.CucumberDataTableUtil.getTitles;
-import static cucumber.util.CucumberDataTableUtil.getValue;
-import static cucumber.util.CustomizedMatcher.containsInAnyOrder;
-import static cucumber.util.CustomizedMatcher.ladderMatch;
+import static integration.util.CucumberDataTableUtil.getTitles;
+import static integration.util.CucumberDataTableUtil.getValue;
+import static integration.util.CustomizedMatcher.containsInAnyOrder;
+import static integration.util.CustomizedMatcher.ladderMatch;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
