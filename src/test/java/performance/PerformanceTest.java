@@ -1,15 +1,14 @@
 package performance;
 
 import orderbook.Order;
-import orderbook.OrderBook;
 import orderbook.Side;
+import performance.util.PerformanceTestUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by keikeicheung on 04/03/2018.
@@ -46,7 +45,7 @@ public class PerformanceTest {
             printWriter.write(sb.toString());
             for (int i = 0; i < numberOfPerformanceTestRun; i++) {
                 System.out.println("Starting Performance Test " + i);
-                executePerformanceTest(i, orders, numberOfLevel, printWriter);
+                PerformanceTestUtil.executePerformanceTest(i, orders, numberOfLevel, printWriter);
             }
             printWriter.close();
         } catch (FileNotFoundException e) {
@@ -54,67 +53,4 @@ public class PerformanceTest {
         }
     }
 
-    private static void executePerformanceTest(int runIndex, List<Order> orders, int level, PrintWriter printWriter) {
-        System.out.println("Performance Test: Add Order");
-        long startTime = System.currentTimeMillis();
-        OrderBook orderBook = new OrderBook();
-        for (Order order : orders) {
-            orderBook.addOrder(order);
-        }
-        long stopTime = System.currentTimeMillis();
-        long addOrderTime = stopTime - startTime;
-        double averageAddOrderTime = new Long(addOrderTime).doubleValue() / new Integer(orders.size()).doubleValue();
-
-        System.out.println("Performance Test: Retrieve Price At Level");
-        startTime = System.currentTimeMillis();
-        for (int i = 0; i < level; i++) {
-            orderBook.getPriceWithSideAndLevel(Side.BID, i);
-        }
-        stopTime = System.currentTimeMillis();
-        long retrievePriceFromSideAndLevelTime = stopTime - startTime;
-        double averageRetrievePriceFromSideAndLevelTime = new Long(retrievePriceFromSideAndLevelTime).doubleValue() / new Integer(level).doubleValue();
-
-        System.out.println("Performance Test: Modify Order Quantity");
-        startTime = System.currentTimeMillis();
-        for (Order order : orders) {
-            orderBook.modifyOrderQuantityWithId(order.getId(), 2000000L);
-        }
-        stopTime = System.currentTimeMillis();
-        long modifyQuantityTime = stopTime - startTime;
-        double averageModifyQuantityTime = new Long(modifyQuantityTime).doubleValue() / new Integer(orders.size()).doubleValue();
-
-        System.out.println("Performance Test: Retrieve Total Quantity With Side And Level");
-        startTime = System.currentTimeMillis();
-        for (int i = 0; i < level; i++) {
-            orderBook.getTotalQuantityWithSideAndLevel(Side.BID, i);
-        }
-        stopTime = System.currentTimeMillis();
-        long retrieveTotalQuantityTime = stopTime - startTime;
-        double averageRetrieveTotalQuantityTime = new Long(retrieveTotalQuantityTime).doubleValue() / new Integer(level).doubleValue();
-
-        System.out.println("Performance Test: Remove Order By Id");
-        List<String> orderIds = orders.stream().map(order -> order.getId()).collect(Collectors.toList());
-        startTime = System.currentTimeMillis();
-        for (String orderId : orderIds) {
-            orderBook.removeOrderByOrderId(orderId);
-        }
-        stopTime = System.currentTimeMillis();
-        long removeOrderTime = stopTime - startTime;
-        double averageRemoveOrderTime = new Long(removeOrderTime).doubleValue() / new Integer(orders.size()).doubleValue();
-
-        StringBuilder sb = new StringBuilder();
-        sb.append((runIndex + 1) + ",");
-        sb.append(addOrderTime + ",");
-        sb.append(averageAddOrderTime + ",");
-        sb.append(retrievePriceFromSideAndLevelTime + ",");
-        sb.append(averageRetrievePriceFromSideAndLevelTime + ",");
-        sb.append(modifyQuantityTime + ",");
-        sb.append(averageModifyQuantityTime + ",");
-        sb.append(retrieveTotalQuantityTime + ",");
-        sb.append(averageRetrieveTotalQuantityTime + ",");
-        sb.append(removeOrderTime + ",");
-        sb.append(averageRemoveOrderTime);
-        sb.append('\n');
-        printWriter.write(sb.toString());
-    }
 }
