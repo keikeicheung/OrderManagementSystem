@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Removing OFFER order to order book" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-03-04T09:16:59" hostname="Keis-MBP" time="0.002">
+  <properties/>
+  <testcase name="Given There are several orders in OFFER ladder of order book" classname="Scenario: Removing OFFER order to order book" time="0.0"/>
+  <testcase name="When Removing order order-3" classname="Scenario: Removing OFFER order to order book" time="0.0"/>
+  <testcase name="Then The OFFER ladder will be" classname="Scenario: Removing OFFER order to order book" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Removing OFFER order to order book" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

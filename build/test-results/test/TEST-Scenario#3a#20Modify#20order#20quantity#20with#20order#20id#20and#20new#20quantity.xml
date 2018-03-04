@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Modify order quantity with order id and new quantity" tests="5" skipped="0" failures="0" errors="0" timestamp="2018-03-04T09:16:59" hostname="Keis-MBP" time="0.002">
+  <properties/>
+  <testcase name="Given There are several orders in order book" classname="Scenario: Modify order quantity with order id and new quantity" time="0.0"/>
+  <testcase name="When Modify order order-3 to quantity 5000000" classname="Scenario: Modify order quantity with order id and new quantity" time="0.001"/>
+  <testcase name="Then All orders in order book" classname="Scenario: Modify order quantity with order id and new quantity" time="0.0"/>
+  <testcase name="Then The OFFER ladder will be" classname="Scenario: Modify order quantity with order id and new quantity" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Modify order quantity with order id and new quantity" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Removing BID order from order book with multiple orders at same price on ladder" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-03-04T09:16:59" hostname="Keis-MBP" time="0.004">
+  <properties/>
+  <testcase name="Given There are several orders in BID ladder of order book" classname="Scenario: Removing BID order from order book with multiple orders at same price on ladder" time="0.0"/>
+  <testcase name="When Removing order order-2" classname="Scenario: Removing BID order from order book with multiple orders at same price on ladder" time="0.0"/>
+  <testcase name="Then The BID ladder will be" classname="Scenario: Removing BID order from order book with multiple orders at same price on ladder" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Removing BID order from order book with multiple orders at same price on ladder" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
