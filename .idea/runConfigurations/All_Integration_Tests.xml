@@ -2,7 +2,7 @@
   <configuration default="false" name="All Integration Tests" type="JUnit" factoryName="JUnit">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
       <pattern>
-        <option name="PATTERN" value="cucumber.*" />
+        <option name="PATTERN" value="orderbook.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="967f1fc2-547a-4a8f-b636-7a400a396f3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/performance/util/PerformanceTestUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/All_Integration_Tests.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/All_Integration_Tests.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/performance_test_result.csv" afterPath="$PROJECT_DIR$/performance_test_result.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/performance/PerformanceTest.java" afterPath="$PROJECT_DIR$/src/test/java/performance/PerformanceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runConfigurations/All_Integration_Tests.xml" afterPath="$PROJECT_DIR$/runConfigurations/All_Integration_Tests.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -17,10 +16,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/OrderManagementSystem$All_Integration_Tests.coverage" NAME="All Integration Tests Coverage Results" MODIFIED="1520155868807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>cucumber.*</FILTER>
+    <SUITE FILE_PATH="coverage/OrderManagementSystem$All_Integration_Tests.coverage" NAME="All Integration Tests Coverage Results" MODIFIED="1520174427796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>orderbook.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/OrderManagementSystem$All_Unit_Tests.coverage" NAME="All Unit Tests Coverage Results" MODIFIED="1520155883787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/OrderManagementSystem$All_Unit_Tests.coverage" NAME="All Unit Tests Coverage Results" MODIFIED="1520174435687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>orderbook.*</FILTER>
     </SUITE>
   </component>
@@ -173,8 +172,8 @@
       <file leaf-file-name="PerformanceTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/performance/PerformanceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="326">
+              <caret line="30" column="95" lean-forward="true" selection-start-line="30" selection-start-column="95" selection-end-line="30" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,10 +181,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="OrderBookSteps.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/integration/steps/OrderBookSteps.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="All_Unit_Tests.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/runConfigurations/All_Unit_Tests.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PerformanceTestUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/performance/util/PerformanceTestUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-28">
+            <state relative-caret-position="-134">
               <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -199,21 +218,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="All_Unit_Tests.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runConfigurations/All_Unit_Tests.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="performance_test_result.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="performance_test_result.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/performance_test_result.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="64" lean-forward="true" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -836,7 +845,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PerformanceTest">
+  <component name="RunManager" selected="JUnit.All Integration Tests">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -1490,8 +1499,8 @@
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All Unit Tests" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.All Integration Tests" />
-      <item index="2" class="java.lang.String" itemvalue="Application.PerformanceTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.PerformanceTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.All Integration Tests" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -1510,7 +1519,7 @@
       <workItem from="1520150871669" duration="4607000" />
       <workItem from="1520158140723" duration="6519000" />
       <workItem from="1520167394026" duration="2545000" />
-      <workItem from="1520172261069" duration="1587000" />
+      <workItem from="1520172261069" duration="1873000" />
     </task>
     <task id="LOCAL-00001" summary="add run configurations">
       <created>1520155864496</created>
@@ -1537,26 +1546,20 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Integration_Tests - 2018.03.04 at 20h 27m 29s.xml">
-      <configuration name="All Integration Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Integration_Tests - 2018.03.04 at 20h 31m 34s.xml">
-      <configuration name="All Integration Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Integration_Tests - 2018.03.04 at 20h 31m 38s.xml">
-      <configuration name="All Integration Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_Integration_Tests - 2018.03.04 at 22h 13m 11s.xml">
       <configuration name="All Integration Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_Unit_Tests - 2018.03.04 at 17h 31m 22s.xml">
-      <configuration name="All Unit Tests" configurationId="JUnit" />
+    <history-entry file="All_Integration_Tests - 2018.03.04 at 22h 39m 48s.xml">
+      <configuration name="All Integration Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_Unit_Tests - 2018.03.04 at 17h 31m 24s.xml">
-      <configuration name="All Unit Tests" configurationId="JUnit" />
+    <history-entry file="All_Integration_Tests - 2018.03.04 at 22h 40m 03s.xml">
+      <configuration name="All Integration Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_Unit_Tests - 2018.03.04 at 17h 55m 26s.xml">
-      <configuration name="All Unit Tests" configurationId="JUnit" />
+    <history-entry file="All_Integration_Tests - 2018.03.04 at 22h 40m 29s.xml">
+      <configuration name="All Integration Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Integration_Tests - 2018.03.04 at 22h 40m 56s.xml">
+      <configuration name="All Integration Tests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_Unit_Tests - 2018.03.04 at 17h 56m 44s.xml">
       <configuration name="All Unit Tests" configurationId="JUnit" />
@@ -1567,9 +1570,15 @@
     <history-entry file="All_Unit_Tests - 2018.03.04 at 22h 13m 06s.xml">
       <configuration name="All Unit Tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_Unit_Tests - 2018.03.04 at 22h 39m 43s.xml">
+      <configuration name="All Unit Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_Unit_Tests - 2018.03.04 at 22h 40m 36s.xml">
+      <configuration name="All Unit Tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15258000" />
+    <option name="totallyTimeSpent" value="15544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="6" />
@@ -1586,15 +1595,16 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.497558" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.497558" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982457" sideWeight="0.48779" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.48779" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5061082" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25885227" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.4938918" order="3" side_tool="false" content_ui="tabs" />
@@ -1605,7 +1615,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5061082" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1623,20 +1632,9 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/integration/steps/OrderBookSteps.java</url>
-          <line>144</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/integration/util/CustomizedMatcher.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
       <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
@@ -1864,23 +1862,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/integration/steps/OrderBookSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="137" column="50" lean-forward="true" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.csv" />
-    <entry file="file://$PROJECT_DIR$/runConfigurations/All_Unit_Tests.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SECOND">
@@ -1900,19 +1882,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/performance/PerformanceTest.java">
+    <entry file="file://$PROJECT_DIR$/performance_test_result.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/performance/util/PerformanceTestUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28">
+        <state relative-caret-position="-134">
           <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1925,10 +1905,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/performance_test_result.csv">
+    <entry file="file://$PROJECT_DIR$/src/test/java/performance/PerformanceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="64" lean-forward="true" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+        <state relative-caret-position="326">
+          <caret line="30" column="95" lean-forward="true" selection-start-line="30" selection-start-column="95" selection-end-line="30" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/integration/steps/OrderBookSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runConfigurations/All_Unit_Tests.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
