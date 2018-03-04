@@ -4,10 +4,11 @@ import orderbook.Order;
 import orderbook.OrderBook;
 import orderbook.Side;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
@@ -16,17 +17,44 @@ import java.util.stream.Collectors;
 public class PerformanceTest {
 
     public static void main(String[] args) {
+        int numberOfPerformanceTestRun = 10;
+        int numberOfOrders = 10000000;
+        int numberOfLevel = 10000;
+
         System.out.println("Preparing loads of orders...");
         List<Order> orders = new ArrayList<>();
-        for (int i = 0; i < 10000000; i++) {
-            Order order = new Order("order-" + i, Side.BID, 99.0 + (i % 1000 * 0.001), 1000000L);
+        for (int i = 0; i < numberOfOrders; i++) {
+            Order order = new Order("order-" + i, Side.BID, 99.0 + (i % numberOfLevel * (1.0 / numberOfLevel)), (i % 10 + 1) * 1000000L);
             orders.add(order);
         }
-        System.out.println("Start Performance Test");
-        executePerformanceTest(orders);
+        System.out.println("Start Performance Test...");
+        try {
+            PrintWriter printWriter = new PrintWriter(new File("performance_test_result.csv"));
+            StringBuilder sb = new StringBuilder();
+            sb.append("Run Id,");
+            sb.append("Add Order (" + orders.size() + " orders),");
+            sb.append("Add Order,");
+            sb.append("Retrieve Price At Level (1000 levels),");
+            sb.append("Retrieve Price,");
+            sb.append("Modify Order Quantity (" + orders.size() + " orders),");
+            sb.append("Modify Order Quantity,");
+            sb.append("Retrieve Total Quantity (1000 levels),");
+            sb.append("Retrieve Total Quantity,");
+            sb.append("Remove Order (" + orders.size() + " orders),");
+            sb.append("Remove Order");
+            sb.append('\n');
+            printWriter.write(sb.toString());
+            for (int i = 0; i < numberOfPerformanceTestRun; i++) {
+                System.out.println("Starting Performance Test " + i);
+                executePerformanceTest(i, orders, numberOfLevel, printWriter);
+            }
+            printWriter.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    private static void executePerformanceTest(List<Order> orders) {
+    private static void executePerformanceTest(int runIndex, List<Order> orders, int level, PrintWriter printWriter) {
         System.out.println("Performance Test: Add Order");
         long startTime = System.currentTimeMillis();
         OrderBook orderBook = new OrderBook();
@@ -35,19 +63,16 @@ public class PerformanceTest {
         }
         long stopTime = System.currentTimeMillis();
         long addOrderTime = stopTime - startTime;
-        System.out.println("total add order time:" + addOrderTime);
-        System.out.println("average add order time:" + (new Long(addOrderTime).doubleValue() / new Integer(orders.size()).doubleValue()));
+        double averageAddOrderTime = new Long(addOrderTime).doubleValue() / new Integer(orders.size()).doubleValue();
 
         System.out.println("Performance Test: Retrieve Price At Level");
         startTime = System.currentTimeMillis();
-        int level = 1000;
         for (int i = 0; i < level; i++) {
             orderBook.getPriceWithSideAndLevel(Side.BID, i);
         }
         stopTime = System.currentTimeMillis();
         long retrievePriceFromSideAndLevelTime = stopTime - startTime;
-        System.out.println("total retrieve price time:" + retrievePriceFromSideAndLevelTime);
-        System.out.println("average retrieve price time:" + (new Long(retrievePriceFromSideAndLevelTime).doubleValue() / 99.0));
+        double averageRetrievePriceFromSideAndLevelTime = new Long(retrievePriceFromSideAndLevelTime).doubleValue() / new Integer(level).doubleValue();
 
         System.out.println("Performance Test: Modify Order Quantity");
         startTime = System.currentTimeMillis();
@@ -56,9 +81,7 @@ public class PerformanceTest {
         }
         stopTime = System.currentTimeMillis();
         long modifyQuantityTime = stopTime - startTime;
-        System.out.println("total modify quantity time:" + modifyQuantityTime);
-        System.out.println("average modify quantity time:" + (new Long(modifyQuantityTime).doubleValue() / new Integer(orders.size()).doubleValue()));
-
+        double averageModifyQuantityTime = new Long(modifyQuantityTime).doubleValue() / new Integer(orders.size()).doubleValue();
 
         System.out.println("Performance Test: Retrieve Total Quantity With Side And Level");
         startTime = System.currentTimeMillis();
@@ -67,19 +90,31 @@ public class PerformanceTest {
         }
         stopTime = System.currentTimeMillis();
         long retrieveTotalQuantityTime = stopTime - startTime;
-        System.out.println("total retrieve quantity at level time:" + retrieveTotalQuantityTime);
-        System.out.println("average retrieve quantity at level time:" + (new Long(retrieveTotalQuantityTime).doubleValue() / 99.0));
-
+        double averageRetrieveTotalQuantityTime = new Long(retrieveTotalQuantityTime).doubleValue() / new Integer(level).doubleValue();
 
         System.out.println("Performance Test: Remove Order By Id");
         List<String> orderIds = orders.stream().map(order -> order.getId()).collect(Collectors.toList());
         startTime = System.currentTimeMillis();
-        for (String orderId: orderIds) {
+        for (String orderId : orderIds) {
             orderBook.removeOrderByOrderId(orderId);
         }
         stopTime = System.currentTimeMillis();
         long removeOrderTime = stopTime - startTime;
-        System.out.println("total remove order time:" + removeOrderTime);
-        System.out.println("average remove order time:" + (new Long(removeOrderTime).doubleValue() / new Integer(orders.size()).doubleValue()));
+        double averageRemoveOrderTime = new Long(removeOrderTime).doubleValue() / new Integer(orders.size()).doubleValue();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append((runIndex + 1) + ",");
+        sb.append(addOrderTime + ",");
+        sb.append(averageAddOrderTime + ",");
+        sb.append(retrievePriceFromSideAndLevelTime + ",");
+        sb.append(averageRetrievePriceFromSideAndLevelTime + ",");
+        sb.append(modifyQuantityTime + ",");
+        sb.append(averageModifyQuantityTime + ",");
+        sb.append(retrieveTotalQuantityTime + ",");
+        sb.append(averageRetrieveTotalQuantityTime + ",");
+        sb.append(removeOrderTime + ",");
+        sb.append(averageRemoveOrderTime);
+        sb.append('\n');
+        printWriter.write(sb.toString());
     }
 }

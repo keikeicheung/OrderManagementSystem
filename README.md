@@ -2,6 +2,8 @@
 
 Implement a single symbol order book
 
+I have put the runConfi
+
 ## Part A 
 
 Run "All Unit Tests" if you are using Intellij 
@@ -58,3 +60,9 @@ Integration Tests
 Run "All Integration Feature Tests" if you are using Intellij
 
 (Otherwise run all cucumber tests in src/test/java/cucumber cucumber.TestRunner)
+
+Added Performance Tests Also
+
+Run "Performance Test"
+
+see performance_test_result.csv
