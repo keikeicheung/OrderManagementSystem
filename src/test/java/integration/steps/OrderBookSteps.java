@@ -34,7 +34,7 @@ public class OrderBookSteps {
         for (int i = 1; i < rows.size(); i++) {
             DataTableRow currentRow = rows.get(i);
             Double price = getPrice(titles, currentRow);
-            int quantity = getQuantity(titles, currentRow);
+            Long quantity = getQuantity(titles, currentRow);
             String orderId = getId(titles, currentRow);
             if (orderId == null) {
                 orderBook.addOrder(new Order(Side.valueOf(side), price, quantity));
@@ -51,7 +51,7 @@ public class OrderBookSteps {
         for (int i = 1; i < rows.size(); i++) {
             DataTableRow currentRow = rows.get(i);
             Double price = getPrice(titles, currentRow);
-            int quantity = getQuantity(titles, currentRow);
+            Long quantity = getQuantity(titles, currentRow);
             Side side = getSide(titles, currentRow);
             String orderId = getId(titles, currentRow);
             if (orderId == null) {
@@ -69,7 +69,7 @@ public class OrderBookSteps {
         for (int i = 1; i < rows.size(); i++) {
             DataTableRow currentRow = rows.get(i);
             Double price = getPrice(titles, currentRow);
-            int quantity = getQuantity(titles, currentRow);
+            Long quantity = getQuantity(titles, currentRow);
             Side side = getSide(titles, currentRow);
             String orderId = getId(titles, currentRow);
             orderBook.addOrder(new Order(orderId, side, price, quantity));
@@ -82,7 +82,7 @@ public class OrderBookSteps {
     }
 
     @When("^Modify order (.*) to quantity (\\d+)$")
-    public void modifyOrderOrderToQuantity(String orderId, int newQuantity) {
+    public void modifyOrderOrderToQuantity(String orderId, Long newQuantity) {
         orderBook.modifyOrderQuantityWithId(orderId, newQuantity);
     }
 
@@ -108,18 +108,18 @@ public class OrderBookSteps {
     public void theLadderWillBe(String side, DataTable table) {
         List<DataTableRow> rows = table.getGherkinRows();
         List<String> titles = getTitles(table);
-        Map<Double, Integer> expectedLadder = new HashMap<>();
+        Map<Double, Long> expectedLadder = new HashMap<>();
         for (int i = 1; i < rows.size(); i++) {
             DataTableRow currentRow = rows.get(i);
             Double price = getPrice(titles, currentRow);
-            int quantity = getQuantity(titles, currentRow);
+            Long quantity = getQuantity(titles, currentRow);
             expectedLadder.put(price, quantity);
         }
         assertThat(orderBook.getLadder(Side.valueOf(side)), ladderMatch(expectedLadder));
     }
 
     @Then("^The total quantity of (BID|OFFER) ladder at level (\\d+) will be (\\d+)$")
-    public void theQuantityOfBIDLadderAtLevelWillBe(String side, int level, int expectedQuantity) {
+    public void theQuantityOfBIDLadderAtLevelWillBe(String side, int level, Long expectedQuantity) {
         assertThat(orderBook.getTotalQuantityWithSideAndLevel(Side.valueOf(side), level), equalTo(expectedQuantity));
     }
 
@@ -137,7 +137,7 @@ public class OrderBookSteps {
         for (int i = 1; i < rows.size(); i++) {
             DataTableRow currentRow = rows.get(i);
             Double price = getPrice(titles, currentRow);
-            int quantity = getQuantity(titles, currentRow);
+            Long quantity = getQuantity(titles, currentRow);
             String orderId = getId(titles, currentRow);
             Side side = getSide(titles, currentRow);
             expectedOrders.add(new Order(orderId, side, price, quantity));
@@ -161,8 +161,8 @@ public class OrderBookSteps {
         return Double.parseDouble(getValue(titles, currentRow, "Price"));
     }
 
-    private int getQuantity(List<String> titles, DataTableRow currentRow) {
-        return Integer.parseInt(getValue(titles, currentRow, "Quantity"));
+    private Long getQuantity(List<String> titles, DataTableRow currentRow) {
+        return Long.parseLong(getValue(titles, currentRow, "Quantity"));
     }
 
     private Side getSide(List<String> titles, DataTableRow currentRow) {

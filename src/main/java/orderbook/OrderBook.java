@@ -7,8 +7,8 @@ import java.util.*;
  */
 public class OrderBook {
     private final Map<String, Order> orderMap;
-    private final SortedMap<Double, Integer> bidOrderLadder;
-    private final SortedMap<Double, Integer> offerOrderLadder;
+    private final SortedMap<Double, Long> bidOrderLadder;
+    private final SortedMap<Double, Long> offerOrderLadder;
 
     public OrderBook() {
         this.orderMap = new HashMap<>();
@@ -24,10 +24,10 @@ public class OrderBook {
         addLadder(order.getSide(), order.getPrice(), order.getQuantity());
     }
 
-    private void addLadder(Side side, Double price, Integer quantity) {
-        SortedMap<Double, Integer> ladder = getLadder(side);
+    private void addLadder(Side side, Double price, Long quantity) {
+        SortedMap<Double, Long> ladder = getLadder(side);
         if (ladder.containsKey(price)) {
-            Integer originalQuantity = ladder.get(price);
+            Long originalQuantity = ladder.get(price);
             ladder.put(price, originalQuantity + quantity);
         } else {
             ladder.put(price, quantity);
@@ -40,9 +40,9 @@ public class OrderBook {
 
     public void removeOrderByOrderId(String id) {
         Order order = orderMap.get(id);
-        SortedMap<Double, Integer> ladder = getLadder(order.getSide());
-        Integer originalQuantity = ladder.get(order.getPrice());
-        int newQuantity = originalQuantity - order.getQuantity();
+        SortedMap<Double, Long> ladder = getLadder(order.getSide());
+        Long originalQuantity = ladder.get(order.getPrice());
+        Long newQuantity = originalQuantity - order.getQuantity();
         if (newQuantity > 0) {
             ladder.put(order.getPrice(), newQuantity);
         } else {
@@ -52,10 +52,10 @@ public class OrderBook {
         orderMap.remove(id);
     }
 
-    public void modifyOrderQuantityWithId(String id, int newQuantity) {
+    public void modifyOrderQuantityWithId(String id, Long newQuantity) {
         Order order = getOrderById(id);
-        SortedMap<Double, Integer> ladder = getLadder(order.getSide());
-        Integer originalQuantityInLadder = ladder.get(order.getPrice());
+        SortedMap<Double, Long> ladder = getLadder(order.getSide());
+        Long originalQuantityInLadder = ladder.get(order.getPrice());
         ladder.put(order.getPrice(), originalQuantityInLadder - order.getQuantity() + newQuantity);
         order.setQuantity(newQuantity);
     }
@@ -68,11 +68,11 @@ public class OrderBook {
         return getEntry(side, level).getKey();
     }
 
-    public int getTotalQuantityWithSideAndLevel(Side side, int level) {
+    public Long getTotalQuantityWithSideAndLevel(Side side, int level) {
         return getEntry(side, level).getValue();
     }
 
-    public SortedMap<Double, Integer> getLadder(Side side) {
+    public SortedMap<Double, Long> getLadder(Side side) {
         if (side == Side.BID) {
             return bidOrderLadder;
         } else {
@@ -80,11 +80,11 @@ public class OrderBook {
         }
     }
 
-    private Map.Entry<Double, Integer> getEntry(Side side, int level) {
+    private Map.Entry<Double, Long> getEntry(Side side, int level) {
         int index = 0;
-        Iterator<Map.Entry<Double, Integer>> iterator = getLadder(side).entrySet().iterator();
+        Iterator<Map.Entry<Double, Long>> iterator = getLadder(side).entrySet().iterator();
         while (iterator.hasNext() && index <= level) {
-            Map.Entry<Double, Integer> entry = iterator.next();
+            Map.Entry<Double, Long> entry = iterator.next();
             if (index == level) {
                 return entry;
             }

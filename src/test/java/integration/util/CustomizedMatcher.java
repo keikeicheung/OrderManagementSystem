@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
  */
 public class CustomizedMatcher {
 
-    public static Matcher<Map<Double, Integer>> ladderMatch(Map<Double, Integer> expectedLadder) {
-        return new TypeSafeDiagnosingMatcher<Map<Double, Integer>>() {
+    public static Matcher<Map<Double, Long>> ladderMatch(Map<Double, Long> expectedLadder) {
+        return new TypeSafeDiagnosingMatcher<Map<Double, Long>>() {
             @Override
-            protected boolean matchesSafely(Map<Double, Integer> ladder, Description mismatchDescription) {
+            protected boolean matchesSafely(Map<Double, Long> ladder, Description mismatchDescription) {
                 mismatchDescription.appendText("\n")
                         .appendText(String.join("\n",
                         ladder.entrySet().stream().map(entry -> entry.getKey()+":"+entry.getValue()).collect(Collectors.toList())));

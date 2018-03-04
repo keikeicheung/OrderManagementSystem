@@ -9,17 +9,17 @@ public class Order {
     private final String id;
     private final Side side;
     private final Double price;
-    private int quantity;
+    private Long quantity;
 
 
-    public Order(Side side, Double price, int quantity) {
+    public Order(Side side, Double price, Long quantity) {
         this.id = UUID.randomUUID().toString();
         this.side = side;
         this.price = price;
         this.quantity = quantity;
     }
 
-    public Order(String id, Side side, Double price, int quantity) {
+    public Order(String id, Side side, Double price, Long quantity) {
         this.id = id;
         this.side = side;
         this.price = price;
@@ -38,11 +38,11 @@ public class Order {
         return price;
     }
 
-    public Integer getQuantity() {
+    public Long getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Long quantity) {
         this.quantity = quantity;
     }
 
@@ -60,7 +60,7 @@ public class Order {
 
         Order order = (Order) o;
 
-        if (quantity != order.quantity) return false;
+        if (!quantity.equals(order.quantity)) return false;
         if (!id.equals(order.id)) return false;
         if (side != order.side) return false;
         return price.equals(order.price);
