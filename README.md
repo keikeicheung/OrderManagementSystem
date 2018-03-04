@@ -2,7 +2,13 @@
 
 Implement a single symbol order book
 
-I have put the runConfi
+## Setup
+
+Import project as gradle project
+1. New > New from existing source > use gradle wrapper > choose build.gradle in the project
+2. After install and build gradle, copy the runConfigurations folder from root directory to .idea (so you do not need to create runConfigurations again)
+3. You may need to change build.gradle repository mavenCentral() to any maven url you use in company; then refresh gradle
+4. Then you can run All Unit Tests, Integration Tests and Performance Tests
 
 ## Part A 
 
@@ -59,7 +65,7 @@ Integration Tests
 
 Run "All Integration Feature Tests" if you are using Intellij
 
-(Otherwise run all cucumber tests in src/test/java/cucumber cucumber.TestRunner)
+(Otherwise run all cucumber tests in src/test/java/integration/features integration.TestRunner)
 
 Added Performance Tests Also
 

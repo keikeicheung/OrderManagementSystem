@@ -32,16 +32,16 @@ public class PerformanceTest {
             PrintWriter printWriter = new PrintWriter(new File("performance_test_result.csv"));
             StringBuilder sb = new StringBuilder();
             sb.append("Run Id,");
-            sb.append("Add Order (" + orders.size() + " orders),");
-            sb.append("Add Order,");
-            sb.append("Retrieve Price At Level (1000 levels),");
-            sb.append("Retrieve Price,");
-            sb.append("Modify Order Quantity (" + orders.size() + " orders),");
-            sb.append("Modify Order Quantity,");
-            sb.append("Retrieve Total Quantity (1000 levels),");
-            sb.append("Retrieve Total Quantity,");
-            sb.append("Remove Order (" + orders.size() + " orders),");
-            sb.append("Remove Order");
+            sb.append("Add Order (" + orders.size() + " orders) (ms),");
+            sb.append("Add Order (ms),");
+            sb.append("Retrieve Price At Level (1000 levels) (ms),");
+            sb.append("Retrieve Price (ms),");
+            sb.append("Modify Order Quantity (" + orders.size() + " orders) (ms),");
+            sb.append("Modify Order Quantity (ms),");
+            sb.append("Retrieve Total Quantity (1000 levels) (ms),");
+            sb.append("Retrieve Total Quantity (ms),");
+            sb.append("Remove Order (" + orders.size() + " orders) (ms),");
+            sb.append("Remove Order (ms)");
             sb.append('\n');
             printWriter.write(sb.toString());
             for (int i = 0; i < numberOfPerformanceTestRun; i++) {
